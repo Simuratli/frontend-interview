@@ -1,0 +1,182 @@
+---
+import { Button } from "@/components/ui/button";
+import { Menu, X, SidebarIcon } from "lucide-react";
+const currentPath = Astro.url.pathname;
+---
+
+<div id="sidebar" class="flex w-[370px] h-full transition-all">
+  <aside
+    class="bg-white dark:bg-black md:border-r md:border-b md:pb-5 md:w-[350px] w-[100vw] md:relative absolute transition-all"
+  >
+    <div
+      id="sidebar-content"
+      class="p-5 max-h-[calc(100vh-82px)] overflow-x-hidden overflow-scroll [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+    >
+      <div class="flex flex-col gap-y-4 text-sm font-medium font-slab">
+        <a
+          class={`dark:hover:text-[#ada8a8] hover:text-[#696969] transition ${
+            currentPath.includes("questions/q1")
+              ? "text-[#5e5e5e] dark:text-[#b4b4b4] font-semibold"
+              : ""
+          }`}
+          href="http://localhost:4321/questions/q1"
+        >
+          1. What are the different data types present in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          2. Explain Hoisting in javascript.
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          3. Why do we use the word “debugger” in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          1. What are the different data types present in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          2. Explain Hoisting in javascript.
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          3. Why do we use the word “debugger” in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          1. What are the different data types present in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          2. Explain Hoisting in javascript.
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          3. Why do we use the word “debugger” in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          1. What are the different data types present in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          2. Explain Hoisting in javascript.
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          3. Why do we use the word “debugger” in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          1. What are the different data types present in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          2. Explain Hoisting in javascript.
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          3. Why do we use the word “debugger” in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          1. What are the different data types present in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          2. Explain Hoisting in javascript.
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          3. Why do we use the word “debugger” in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          1. What are the different data types present in javascript?
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          2. Explain Hoisting in javascript.
+        </a>
+        <a
+          class="dark:hover:text-[#ada8a8] hover:text-[#696969] transition"
+          href="/q1"
+        >
+          3. Why do we use the word “debugger” in javascript?
+        </a>
+      </div>
+    </div>
+  </aside>
+  <Button
+    id="sidebar-toggle"
+    size="sm"
+    variant={"ghost"}
+    className="mt-4 ml-1 md:ml-3 rounded-full cursor-pointer fixed top-3 md:relative"
+  >
+    <SidebarIcon className="h-4 w-4" />
+  </Button>
+</div>
+
+<script type="module">
+  const btn = document.getElementById("sidebar-toggle");
+  const sidebar = document.getElementById("sidebar");
+  const content = document.getElementById("sidebar-content");
+  btn?.addEventListener("click", () => {
+    sidebar.classList.toggle("!w-[50px]");
+    content.style.display = content.style.display === "none" ? "block" : "none";
+    document.body.style.overflow = content.style.display === "none" ? "auto" : "hidden";
+    document.body.style.height = content.style.display === "none" ? "auto" : "100vh";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  if (window.innerWidth < 768) {
+    console.log(window.innerWidth, "innerwidth");
+    sidebar.classList.add("!w-[50px]");
+    content.style.display = "none"
+    document.body.style.overflow = content.style.display === "none" ? "auto" : "hidden";
+    document.body.style.height = content.style.display === "none" ? "auto" : "100vh";
+  }
+</script>

@@ -1,0 +1,16 @@
+---
+import Logo from "../../public/logo.svg";
+import LogoDark from "../../public/logo-dark.svg";
+import { ModeToggle } from "@/components/mode-toggle";
+---
+
+<nav
+  class="w-full relative p-5 flex gap-x-2 justify-center items-center border-b-1 border-black-200"
+>
+  <a class="flex gap-5 items-center" href="/">
+    <img class="w-10 dark:hidden" src={Logo.src} alt="" />
+    <img class="w-10 hidden dark:block" src={LogoDark.src} alt="" />
+    <h1 class="font-slab">Frontend interview</h1>
+  </a>
+  <ModeToggle client:load className="absolute right-5 md:right-10" />
+</nav>

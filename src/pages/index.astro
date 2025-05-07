@@ -1,25 +1,23 @@
 ---
 import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import {Button} from '../components/ui/button';
+import MainLayout from '../layouts/main.astro';
+import BgImage from '../../public/bgimage.svg';
+import BgImageDark from '../../public/bgimage-dark.svg';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
+<MainLayout  title="Home">
+	<div class="flex md:flex-row text-center md:text-left  flex-col-reverse gap-x-2  items-center mt-10 p-5 md:p-10 w-full justify-center">
+		<div>
+			<h1 class="text-[18px] md:text-[32px] font-bold mb-2 leading-tight max-w-[300px] md:max-w-[500px]">
+				Your Ultimate Guide to  <br> Front-end Interview Success
+			</h1>
+			<p class="text-[14px] md:text-[16px] mb-2">A curated collection of front-end questions, tips, and solutions — built for developers by developers.</p>
+			<Button size="sm" className='cursor-pointer'>Start Learning</Button>
 		</div>
-	</body>
-</html>
+		<div class="flex items-center justify-center">
+			<img class="md:w-auto w-[70%] dark:hidden"  src={BgImage.src} alt="bng image">
+			<img class="md:w-auto w-[70%] hidden dark:block"  src={BgImageDark.src} alt="bng image">
+		</div>
+	</div>
+</MainLayout>

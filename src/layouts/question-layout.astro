@@ -46,7 +46,8 @@ const { title } = Astro.props;
     <div class="flex flex-col h-full">
       <div>
         <Navbar />
-        <div class=" gap-x-10">
+        <div class="flex gap-x-10">
+          <Sidebar />
           <slot />
         </div>
       </div>
